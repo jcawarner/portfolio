@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block greeting %}{% endblock %}
+{% block title %}Projects{% endblock %}
+{% block content %}
+<section class="about">
+    <div class="container about__container--narrow">
+      <div class="page-section">
+        <h2 class="page-section__title">{{project}}</h2>
+          <img class="page-section__title-style" src="{% static 'assets/images/title-style.png' %}" alt="">
+          <p class="page-section__paragraph">{{summary}} </p>
+          <div class="row gutters-80">
+            <div class="col-md-4">
+              <div class="about__image">
+                <img src="{% static img %}" alt="">
+              </div>
+            </div>
+            <div class="col-md-8 about__content">
+              <p class="about__description">{{description}}</p>
+              <div class="row row--margin-top">
+              </div>
+              <div class="row">
+                <div class="col-md-4">
+                  <a class="button button--colorful button--margin" href="#">Download Resume</a>
+                </div>
+                <div class="col-md-4">
+                  <a class="button button--colorful button--margin" href="{{github}}">GitHub</a>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

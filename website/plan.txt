@@ -1,0 +1,5 @@
+buttons on each category can redirect to different types of projects
+
+Index.html
+    - gui icon
+
