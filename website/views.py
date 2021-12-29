@@ -13,6 +13,9 @@ def home(request):
 def gui(request):
 	return render(request, 'gui.html', {})
 
+def website(request):
+	return render(request, 'website.html', {})
+
 
 def projects(request, project):
 	if project == 'Favorite Quotes':
