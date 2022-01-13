@@ -21,7 +21,7 @@ def contact(request):
 				send_mail(subject, message, from_email, ['jcaprogramming2012@gmail.com'], fail_silently=False)
 			except BadHeaderError:
 				return HttpResponse('Invalid header found.')
-			return redirect('success')
+		return redirect('success')
 
 
 	return render(request, 'contact.html', {'form': form})
