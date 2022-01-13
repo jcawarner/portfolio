@@ -8,5 +8,7 @@ urlpatterns = [
     path('gui/', views.gui, name='gui'),
     path('gui/projects/<str:project>', views.projects, name='projects'),
     path('website/', views.website, name='website'),
+    path('contact/', views.contact, name='contact'),
+    path('contact/success', views.success, name='success'),
 
 ]

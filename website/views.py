@@ -1,15 +1,35 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.http import HttpResponse, HttpResponseRedirect
+from .forms import ContactForm
+from django.core.mail import send_mail, BadHeaderError
 
 
 def home(request):
 	return render(request, 'index.html', {})
 
-# def about(request):
-# 	return render(request, 'about.html', {})
-#
-# def webdevelopment(request):
-# 	return render(request, 'webdevelopment.html', {})
-#
+
+def contact(request):
+	if request.method == 'GET':
+		form = ContactForm()
+	else:
+		form = ContactForm(request.POST)
+		if form.is_valid():
+			subject = form.cleaned_data['subject']
+			from_email = form.cleaned_data['from_email']
+			message = form.cleaned_data['message']
+			try:
+				send_mail(subject, message, from_email, ['jcaprogramming2012@gmail.com'])
+			except BadHeaderError:
+				return HttpResponse('Invalid header found.')
+			return redirect('success')
+
+
+	return render(request, 'contact.html', {'form': form})
+
+def success(request):
+	return HttpResponse('Success! Thank you for your message.')
+
+
 def gui(request):
 	return render(request, 'gui.html', {})
 
