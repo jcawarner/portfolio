@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block greeting %}{% endblock %}
+{% block title %}Freelancing Projects{% endblock %}
+{% block content %}
+<section class="about">
+    <div class="container about__container--narrow">
+      <div class="page-section">
+        <h2 class="page-section__title">{{project}}</h2>
+          <img class="page-section__title-style" src="{% static 'assets/images/title-style.png' %}" alt="">
+          <p class="page-section__paragraph">{{summary}} </p>
+          <div class="row gutters-80">
+            <div class="col-md-4">
+              <div class="about__image">
+                <img src="{% static img %}" alt="">
+              </div>
+            </div>
+            <div class="col-md-8 about__content">
+              <p class="about__description">{{description}}</p>
+              <div class="row row--margin-top">
+              </div>
+              <div class="row">
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+    <div class="container about__container--narrow">
+      <div class="page-section">
+        <p class="page-section__paragraph">{{service}} </p>
+          <img class="page-section__title-style" src="{% static 'assets/images/title-style.png' %}" alt="">           
+            <div class="col-md-4">
+              <div class="about__image">
+                <img src="{% static img_1 %}" alt="">
+              </div>
+            </div>
+            <div class="col-md-8 about__content">
+              <p class="about__description">{{service_desc}}</p>
+              <div class="row row--margin-top">
+              </div>
+              <div class="row">
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+    <div class="container about__container--narrow">
+      <div class="page-section">
+        <p class="page-section__paragraph">{{stack}} </p>
+          <img class="page-section__title-style" src="{% static 'assets/images/title-style.png' %}" alt="">
+          <div class="row gutters-80">
+            <div class="col-md-4">
+              <div class="about__image">
+                <img src="{% static img_2 %}" alt="">
+              </div>
+            </div>
+            <div class="col-md-8 about__content">
+              <p class="about__description">{{stack_desc}}</p>
+              <div class="row row--margin-top">
+              </div>
+              <div class="row">
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+    <div class="container about__container--narrow">
+      <div class="page-section">
+        <p class="page-section__paragraph">{{aws}} </p>
+          <img class="page-section__title-style" src="{% static 'assets/images/title-style.png' %}" alt="">
+          <div class="row gutters-80">
+            <div class="col-md-4">
+              <div class="about__image">
+                <img src="{% static img_3 %}" alt="">
+              </div>
+            </div>
+            <div class="col-md-8 about__content">
+              <p class="about__description">{{aws_desc}}</p>
+              <div class="row row--margin-top">
+              </div>
+              <div class="row">
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}

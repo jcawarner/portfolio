@@ -57,3 +57,37 @@ def projects(request, project):
 										'description': description,
 										'github':github,
 										})
+
+
+def freelancing_projects(request, freelancing_project):
+	if freelancing_project == 'sbadmin':
+		img = 'assets/images/sb_admin_big_mainpage.png'
+		img_1 = 'assets/images/sb_admin_servers.png'
+		img_2 = 'assets/images/sb_admin_stack_crud.png'
+		img_3 = 'assets/images/sb_admin_aws_crud.png'
+		summary = "Database Integration Freelance Project"
+		service_page = "Services Page"
+		stack_crud = "Stack Form Updating the Database"
+		aws_crud = "AWS Form Updating the Database"
+		description = """This project was created with Python and Django.  This project included Database integraton, template rendering and CRUD operations"""
+		service_desc = "Database integration and displaying on a table on the website also hyperlink to update the database"
+		stack_desc = "Simple form to update the database"
+		aws_desc = "More complex form to update the database on the entire aws entries"
+		github = "https://github.com/jcawarner/favorite-quotes"
+	return render(request, 'freelance_projects.html', {
+										'project':freelancing_project,
+										'img': img,
+										'img_1':img_1,
+										'img_2': img_2,
+										'img_3': img_3,
+										'summary': summary,
+										'service': service_page,
+										'stack': stack_crud,
+										'aws': aws_crud,
+										'description': description,
+										'service_desc': service_desc,
+										'stack_desc': stack_desc,
+										'aws_desc': aws_desc,
+										'github':github,
+										})
+
